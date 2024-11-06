@@ -3,6 +3,14 @@ require_relative 'Homework'  # підключаємо файл із класом
 require 'date'
 require 'minitest/reporters'
 
+Minitest::Reporters.use! [
+                           Minitest::Reporters::SpecReporter.new,
+                           Minitest::Reporters::HtmlReporter.new(
+                             reports_dir: "C:/Users/CyberYou/Desktop/Ruby/RubyCrashCourse/untitled/test_reports/",
+                             output_filename: "Student_test.html",
+                             ),
+                         ]
+
 
 class StudentTest < Minitest::Test
   def setup

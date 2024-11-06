@@ -4,6 +4,14 @@ require_relative 'Homework'
 require 'minitest/reporters'
 
 
+Minitest::Reporters.use! [
+                           Minitest::Reporters::SpecReporter.new,
+                           Minitest::Reporters::HtmlReporter.new(
+                             reports_dir: "C:/Users/CyberYou/Desktop/Ruby/RubyCrashCourse/untitled/test_reports/",
+                             output_filename: "Student_Spec_test.html",
+                             ),
+                         ]
+
 describe Student do
   before do
     Student.class_variable_set(:@@students, [])
