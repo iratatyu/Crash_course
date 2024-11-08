@@ -1,10 +1,5 @@
 require 'capybara/rspec'
-require_relative 'spec_helper'
-require 'rspec_html_reporter'
-
-RSpec.configure do |config|
-  config.add_formatter(RspecHtmlReporter::Reporter, 'report.html')
-end
+require_relative 'spec_help'
 
 RSpec.describe 'Login Tests' do
   before(:each) do

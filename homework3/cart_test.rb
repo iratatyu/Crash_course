@@ -1,11 +1,7 @@
 require 'selenium-webdriver'
 require 'capybara/rspec'
 require_relative 'spec_help'
-require 'rspec_html_reporter'
 
-RSpec.configure do |config|
-  config.add_formatter(RspecHtmlReporter::Reporter, 'report.html')
-end
 
 RSpec.describe 'Cart Test' do
   include Capybara::DSL
@@ -20,8 +16,9 @@ RSpec.describe 'Cart Test' do
     @driver.fill_in 'password', with: 'secret_sauce'
     @driver.click_button('Login')
 
-    @driver.click_button('add-to-cart-sauce-labs-Onesie')
-    @driver.click_button('add-to-cart-sauce-labs-Backpack')
+    @driver.click_button('add-to-cart-sauce-labs-backpack')
+    @driver.click_button('add-to-cart-sauce-labs-onesie')
+
 
     # Перевірка кошика
     @driver.find('.shopping_cart_link').click
